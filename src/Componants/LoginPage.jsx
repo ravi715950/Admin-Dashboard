@@ -14,15 +14,14 @@ const LoginPage = () => {
                 <div className=' font-sans '>
                     <p className='mb-8'>Please login here</p>
                 </div>
-                {/* <div className='w-[200%]' > */}
+                
                     <input className='w-full px-4 py-3 border border-gray-300 rounded-xl' type="Email" placeholder='Enter email to get started' />
-                {/* </div> */}
-                {/* <div  className='w-[200%]'> */}
+                
+                
                     <input className='w-full px-4 py-3 border border-gray-300 rounded-xl mt-4' type="Password" placeholder='**********' />
-                {/* </div> */}
-                {/* <div className='w-[200%] '> */}
+                
                 <button className='w-full px-6 py-3 bg-blue-500 text-white font-semibold rounded-xl mt-4 hover:bg-sky-800 focus:outline-none'>Login</button>
-                {/* </div> */}
+                
             </div>
             </div>
 
