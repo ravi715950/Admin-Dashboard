@@ -1,13 +1,30 @@
-import React from 'react'
-import { items } from './Data'
+import React, { useEffect } from 'react'
+import { useState } from 'react'
 
 function QueryPanel() {
+  const  [query, setQuery] = useState([]);
+  const [search, setSearch] = useState("");
+
+
+  useEffect(() => {
+    const fetchData= async()=>{
+      const data = await fetch("https://query-crud.onrender.com/api/query");
+      const result = await data.json();
+      const filterData = result.filter((item)=>item.name.toLowerCase().includes(search.toLowerCase()));
+      setQuery(filterData)
+        }
+      
+        fetchData();
+  }, [search])
+  
+
+  console.log(search)
   return (
     <>
   <div className='h-full border rounded-3xl'>
 <div className='flex justify-between items-center m-5 border-b-2 pb-4'>
     <h1 className='text-3xl text-blue-600'>Query Panel</h1>
-    <input className='px-4 py-3 border border-gray-300 rounded-xl'  type="text" placeholder='Search' />
+    <input value={search} onChange={(e)=>setSearch(e.target.value)}  className='px-4 py-3 border border-gray-300 rounded-xl'  type="text" placeholder='Search' />
 </div>
 <div>
 <table>
@@ -17,12 +34,12 @@ function QueryPanel() {
     <th>phone</th>
     <th>message</th>
   </tr>
-{items.map((query)=>(
+{query.map((user)=>(
  <tr>
- <td>{query.name}</td>
- <td>{query.email}</td>
- <td>{query.phone}</td>
- <td>{query.message}</td>
+ <td>{user.name}</td>
+ <td>{user.email}</td>
+ <td>{user.phone}</td>
+ <td>{user.description}</td>
 </tr>
 ))} 
  
