@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Sidebar from './Sidebar'
 import QueryPanel from './QueryPanel'
+import { useNavigate } from 'react-router-dom'
 
 function Navbar() {
+const navigate = useNavigate()
+  useEffect(() => {
+   if(!localStorage.getItem("myToken")){
+    navigate("/login")
+   }
+  })
+  
   return (
     <div className='flex gap-5 h-screen'>
       <Sidebar/>
