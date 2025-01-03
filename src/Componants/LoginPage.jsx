@@ -56,11 +56,11 @@ const LoginPage = () => {
     }
     
     return (
-        <div className='grid grid-cols-12 h-screen bg-white '>
-            <div className=' col-span-7 rounded p-4 xl:block hidden' >
+        <div className='grid grid-cols-12 h-screen  bg-white '>
+            <div className=' col-span-0 md:col-span-7 rounded p-4 xl:block hidden' >
                 <img className='h-full  rounded-3xl ' src="https://plus.unsplash.com/premium_photo-1673984261110-d1d931e062c0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDM4fGFldTZyTC1qNmV3fHxlbnwwfHx8fHw%3D" alt="Placeholder" />
             </div>
-            <div className=' col-span-5 flex justify-center items-center'>
+            <div className=' col-span-12 md:col-span-5 flex justify-center items-center'>
                 <div className='max-w-[450px] w-[450px] px-5'>
                     <div className='text-4xl font-bold'>
                         <h2 className='mb-2 '>Welcome  👋</h2>
