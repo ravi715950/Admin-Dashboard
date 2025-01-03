@@ -56,12 +56,12 @@ const LoginPage = () => {
     }
     
     return (
-        <div className='grid xl:grid-cols-2 grid-cols-1 h-screen bg-white '>
-            <div className='w-[110%] rounded p-4 xl:block hidden' >
+        <div className='grid grid-cols-12 h-screen bg-white '>
+            <div className=' col-span-7 rounded p-4 xl:block hidden' >
                 <img className='h-full  rounded-3xl ' src="https://plus.unsplash.com/premium_photo-1673984261110-d1d931e062c0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDM4fGFldTZyTC1qNmV3fHxlbnwwfHx8fHw%3D" alt="Placeholder" />
             </div>
-            <div className='flex justify-center items-center'>
-                <div className='w-[350px]'>
+            <div className=' col-span-5 flex justify-center items-center'>
+                <div className='max-w-[450px] w-[450px] px-5'>
                     <div className='text-4xl font-bold'>
                         <h2 className='mb-2 '>Welcome  👋</h2>
                     </div>
@@ -73,17 +73,19 @@ const LoginPage = () => {
                         <input className='w-full px-4 py-3 border border-gray-300 rounded-xl' name="email"  type="text" placeholder='Enter email to get started' value={username} onChange={(e) => setUsername(e.target.value)} />
                       
 
-
+                <div className='w-full relative'>
                         <input className='w-full px-4 py-3 border border-gray-300 rounded-xl mt-4'  type={show ? "text" : "password"} placeholder='**********' value={password} onChange={(e) => setPassword(e.target.value)} />
                       
                         <h6  className='cursor-pointer' onClick={ ()=>setShow(!show)}>
                           
                             {show ? (
-                                <BsEye className='w-[650px] transform -translate-y-8'/>
+                                <BsEye className='absolute right-4 top-8'/>
                             ):(
-                                <BsEyeSlash  className='w-[650px] transform -translate-y-8'/>
+                                <BsEyeSlash  className='absolute right-4 top-8'/>
                             )}
                         </h6>
+
+</div>
             
 
                         <button type='submit' className='w-full px-6 py-3 bg-blue-500 text-white font-semibold rounded-xl mt-4 hover:bg-sky-800 focus:outline-none'>Login</button>
