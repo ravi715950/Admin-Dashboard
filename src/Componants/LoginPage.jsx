@@ -21,7 +21,7 @@ const LoginPage = () => {
             password,
         };
     
-        console.log(payloader); // Log the payload for debugging
+        console.log(payloader); 
     
         try {
             const response = await fetch('https://query-crud.onrender.com/api/auth/login', {
@@ -37,10 +37,9 @@ const LoginPage = () => {
             if (response.ok) {
                 const data = await response.json(); 
                 alert('Logged in successfully');
-                console.log('Response data:', data.token);
                 localStorage.setItem("myToken",data.token)
                 navigate("/") 
-                setPassword(''); 
+                
             } else {
                 const errorData = await response.json(); 
                 alert(`Login failed: ${errorData.message || 'Unknown error'}`); 

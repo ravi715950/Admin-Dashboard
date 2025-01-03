@@ -12,7 +12,7 @@ const navigate = useNavigate()
   })
   
   return (
-    <div className='flex gap-5 h-screen'>
+    <div className='flex gap-2 h-screen relative '>
       <Sidebar/>
       <div className='w-full'>
       <div className='p-4'>

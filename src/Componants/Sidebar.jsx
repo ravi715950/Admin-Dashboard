@@ -11,19 +11,19 @@ const Sidebar = () => {
   return (
     <>
       <div className='flex h-screen p-4 rounded-lg ' >
-        <div className='w-64 bg-slate-100 text-black p-4 rounded-3xl space-y-12 space-x-8 '>
-          <div >Logo</div>
-          <div className='text-center space-y-8'>
+        <div className='w-64 bg-slate-100 text-black p-4 rounded-3xl space-y-12 space-x-8 xl:block hidden'>
+          <div className='h-20'></div>
+          <div className='text-center space-y-8 '>
             <div className=' hover:bg-slate-300 w-fit px-4 py-3 rounded-lg'>
               <Link to="/login">HomePage</Link>
             </div>
             <div className=' hover:bg-slate-300 w-fit px-4 py-3 rounded-lg'><Link to="/login">About us</Link></div>
-            <div className=' hover:bg-slate-300 w-fit px-4 py-3 rounded-lg'>Add on
+            <div className=' hover:bg-slate-300 w-fit px-4 py-3 rounded-lg'><Link to="/AddQuery">Add query</Link>
             </div>
             <div className=' hover:bg-slate-300 w-fit px-4 py-3 rounded-lg'>
               <Link to="/">Query</Link>
             </div>
-            <div className=' hover:bg-slate-300 w-fit px-4 py-3 rounded-lg' onClick={logout} >Log Out</div>
+            <div className=' hover:bg-slate-300 w-fit px-4 py-3 rounded-lg cursor-pointer' onClick={logout} >Log Out</div>
           </div>
         </div>
       </div>
